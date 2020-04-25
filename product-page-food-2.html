@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FISHOP</title>
+    <link rel="stylesheet" href="product-page.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<!-- BEGIN HEADER -->
+<div>
+    <a href="index.html">
+        <img class=logo src="img/logo.png" alt="logo">
+    </a>
+    <div class="caption">
+        <p>THE #1 FISH SHOP FOR YOUR ALL YOUR FISH NEEDS</p>
+    </div>
+</div>
+
+<div class="nav">
+    <a href="index.html#left-nav">SHOP</a>
+    <a href="about.html">ABOUT US</a>
+</div>
+<!-- END HEADER -->
+
+<!-- BEGIN MIDDLE -->
+<div class="listing" id="img/fish-food/tetra-goldfish">
+    <header>TetraFin Balanced Diet Goldfish Flake Food</header>
+    <header>PURCHASE FORM</header>
+    <div class=" picture-carousel" id="pictureCarousel">
+        <a class="prev" onclick="showPicture(-1)">
+            < </a>
+                <a class="next" onclick="showPicture(1)">></a>
+    </div>
+    <div>
+        <form id="myForm" onsubmit="checkForm();return false;">
+            <p class="error" id="error"></p>
+            <label for="products">Select Item:</label>
+            <select id="products">
+                <option>TetraFin Balanced Diet Goldfish Flake Food</option>
+            </select>
+            <label for="quantity">Quanity:</label>
+            <select id="quantity">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname">
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname">
+            <label for="phoneNumber">Phone Number (XXXXXXXXXX): </label>
+            <input type="text" id="phoneNumber">
+            <label for="street">Street:</label>
+            <input type="text" id="street">
+            <label for="city">City:</label>
+            <input type="text" id="city">
+            <label for="state">State:</label>
+            <input type="text" id="state">
+            <label for="postalCode">Postal Code (XXXXX):</label>
+            <input type="text" id="postalCode">
+            <label for="shippingMethod">Shipping Method:</label>
+            <select id="shippingMethod">
+                <option>Overnight</option>
+                <option>2 Days Expedited</option>
+                <option>6 Days Ground</option>
+            </select>
+            <label for="ccnumber">Credit Card Number (XXXXXXXXXXXXXXXX):</label>
+            <input type="text" id="ccnumber">
+            <label for="ccv">CCV (XXX) or (XXXX):</label>
+            <input type="text" id="ccv">
+            <input type="submit" id="submit">
+        </form>
+    </div>
+    <p>PRICE (each): $14.99</p>
+
+</div>
+<div class="extended-description">
+    <p>Detailed Description: GOLDFISH FORMULATION: Specially designed for use as a staple flake food for your goldfish
+        or small koi.
+        COMPLETE DIET: Nutritionally balanced diet for optimal health, color and vitality.
+        ACTIVE LIFE FORMULA: With added antioxidants for healthy cells, select proteins for growth and prebiotics for
+        digestion.
+        CLEANER AND CLEARER WATER FORMULA: Won’t cloud water when used as directed.
+        COLOR ENHANCING: Enhances the goldfish’s naturally brilliant colors.
+        Nutritionally balanced staple food now with ProCare for optimal health
+        Dispenser lids (on select sizes) allow hands-free feeding
+        Easier-to-digest formula yields Tetra's "Cleaner & Clearer Water" guarantee
+        Precise blend of immunostimulants, vitamins, biotin, and Omega-3 fatty acids is custom-designed to strengthen
+        fish's resistance to disease and stress
+    </p>
+</div>
+<!-- END MIDDLE -->
+
+<!-- BEGIN FOOTER -->
+<div class="nav">
+    <a1>Name: Vivian Nguyen / UCINetID: nguyev12 / ID #: 84955920 / Machine Number: 27</a1>
+</div>
+<!-- END FOOTER -->
+<script src="main.js"></script>
+
+</html>
