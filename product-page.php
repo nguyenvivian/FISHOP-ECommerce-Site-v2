@@ -55,7 +55,7 @@
             <p class="error" id="error"></p>
             <label for="products">Select Item:</label>
             <select id="products">
-                <option>API TROPICAL</option>
+                <option><?php print_r($products['NAME'])?></option>
             </select>
             <label for="quantity">Quanity:</label>
             <select id="quantity">
