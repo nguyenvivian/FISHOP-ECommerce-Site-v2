@@ -36,7 +36,12 @@
         <!-- BEGIN FISH FOOD CATEGORY -->
         <div class="product-header" id="fish-food">FISH FOOD</div>
         <div class="product">
-
+            <div>
+                <?php include("retrieve_products.php");?>
+                <?php foreach($products as $product){ ?>
+                <h6><?php echo htmlspecialchars($product['NAME']); ?></h6>
+                <?php } ?>
+            </div>
             <div class="product-card">
                 <a href="product-page-food-1.html">
                     <img src="img/fish-food/api-tropical-1.jpg" alt="api tropical fish food"

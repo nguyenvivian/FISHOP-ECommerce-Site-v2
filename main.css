@@ -126,6 +126,7 @@ header{
 
 .product-card product-name{
     display: block;
+    padding-top: 15px;
     font-size: large;
     font-weight: bold;
 }
