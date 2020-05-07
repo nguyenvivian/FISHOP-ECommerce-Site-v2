@@ -1,3 +1,32 @@
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    try{
+        $conn = mysqli_connect($servername, $username, $password,'project2');
+        // echo "Connected successfully";
+        $val = $_GET["val"];
+        // echo $val;
+        $sql1 = "SELECT * FROM PRODUCT_CARD WHERE PRODUCT_ID = $val";
+        $result1 = mysqli_query($conn, $sql1);
+
+        $products = mysqli_fetch_array($result1, MYSQLI_ASSOC);
+
+        $sql2 = "SELECT * FROM PRODUCT_DETAIL WHERE PRODUCT_ID = $val";
+        $result2 = mysqli_query($conn, $sql2);
+
+        $product_details = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+
+        // foreach($products as $product){
+        //     echo htmlspecialchars($product["NAME"]);
+        // }
+        $conn=null;
+    }
+    catch (PDOException $e){
+        echo $e->getMessage();
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -8,26 +37,15 @@
 </head>
 
 <!-- BEGIN HEADER -->
-<div>
-    <a href="index.html">
-        <img class=logo src="img/logo.png" alt="logo">
-    </a>
-    <div class="caption">
-        <p>THE #1 FISH SHOP FOR YOUR ALL YOUR FISH NEEDS</p>
-    </div>
-</div>
-
-<div class="nav">
-    <a href="index.html#left-nav">SHOP</a>
-    <a href="about.html">ABOUT US</a>
-</div>
+<?php echo file_get_contents("header.html"); ?>
 <!-- END HEADER -->
 
 <!-- BEGIN MIDDLE -->
-<div class="listing" id="img/live-fish/marlboro-discus">
-    <header>Marlboro Discus</header>
+
+<div class="listing" id="<?php print_r(substr(($products['PATH']),0,(strlen($products['PATH']) - 6)))?>">
+    <header><?php print_r($products['NAME'])?></header>
     <header>PURCHASE FORM</header>
-    <div class=" picture-carousel" id="pictureCarousel">
+    <div class="picture-carousel" id="pictureCarousel">
         <a class="prev" onclick="showPicture(-1)">
             < </a>
                 <a class="next" onclick="showPicture(1)">></a>
@@ -37,7 +55,7 @@
             <p class="error" id="error"></p>
             <label for="products">Select Item:</label>
             <select id="products">
-                <option>Marlboro Discus</option>
+                <option>API TROPICAL</option>
             </select>
             <label for="quantity">Quanity:</label>
             <select id="quantity">
@@ -73,27 +91,20 @@
             <input type="submit" id="submit">
         </form>
     </div>
-    <p>PRICE (each): $132.99</p>
+    <p>PRICE (each): $<?php print_r($products['PRICE'])?></p>
 
 </div>
 <div class="extended-description">
-    <p>Detailed Description: Origin: Discus are Cichlids, and their ancestors lived in or very near the Amazon River in
-        South America.
-
-        But now of course they live in aquariums all over the world.
-
-        Maximum Size: In aquariums Discus can grow to be about 6" long and rarely even larger.
-
-        Behaviors: Discus are usually not aggressive fish, but from time to time they can be territorial especially when
-        preparing to breed, breeding, and then protecting their babies.
+    <?php foreach($product_details as $product_detail){ ?>
+    <p><?php echo htmlspecialchars($product_detail['DETAILED_DESCRIPTION']); ?>
     </p>
+    <?php } ?>
+
 </div>
 <!-- END MIDDLE -->
 
 <!-- BEGIN FOOTER -->
-<div class="nav">
-    <a1>Name: Vivian Nguyen / UCINetID: nguyev12 / ID #: 84955920 / Machine Number: 27</a1>
-</div>
+<?php echo file_get_contents("footer.html"); ?>
 <!-- END FOOTER -->
 <script src="main.js"></script>
 

@@ -4,14 +4,14 @@
     $password = "";
     try{
         $conn = mysqli_connect($servername, $username, $password,'project2');
-        echo "Connected successfully";
+        // echo "Connected successfully";
         $sql = "SELECT * FROM PRODUCT_CARD";
 
         $result = mysqli_query($conn, $sql);
 
         $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-
+        $conn=null;
         // foreach($products as $product){
         //     echo htmlspecialchars($product["NAME"]);
         // }
@@ -24,12 +24,9 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>FISHOP</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-
+<!-- BEGIN HEADER -->
 <?php echo file_get_contents("header.html"); ?>
+<!-- END HEADER -->
 
 <!-- BEGIN MIDDLE SECTION -->
 <div class="grid-container">
@@ -48,7 +45,7 @@
             <?php foreach($products as $product){ ?>
                 <?php if (strpos($product['PATH'], "fish-food")){ ?>
                     <div class="product-card">
-                        <a href="product-page-food-<?php echo $product['PRODUCT_ID']; ?>.html">
+                        <a href="product-page.php?val=<?php echo $product['PRODUCT_ID']; ?>">
                         <div>
                         <img src="<?php echo $product['PATH']; ?>" style="<?php echo $product['DIMENSION']; ?>">
                         <product-name><?php echo htmlspecialchars($product['NAME']); ?></product-name>
@@ -69,7 +66,7 @@
             <?php foreach($products as $product){ ?>
                 <?php if (strpos($product['PATH'], "live-fish")){ ?>
                     <div class="product-card">
-                        <a href="product-page-food-<?php echo $product['PRODUCT_ID']; ?>.html">
+                        <a href="product-page.php?val=<?php echo $product['PRODUCT_ID']; ?>">
                         <div>
                         <img src="<?php echo $product['PATH']; ?>" style="<?php echo $product['DIMENSION']; ?>">
                         <product-name><?php echo htmlspecialchars($product['NAME']); ?></product-name>
@@ -89,6 +86,7 @@
 </div>
 <!-- END MIDDLE SECTION -->
 
+<!-- BEGIN FOOTER -->
 <?php echo file_get_contents("footer.html"); ?>
-
+<!-- END FOOTER -->
 </html>
