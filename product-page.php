@@ -57,7 +57,7 @@
             <select id="products">
                 <option><?php print_r($products['NAME'])?></option>
             </select>
-            <label for="quantity">Quanity:</label>
+            <label for="quantity">Quantity:</label>
             <select id="quantity">
                 <option>1</option>
                 <option>2</option>

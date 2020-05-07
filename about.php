@@ -7,19 +7,7 @@
 </head>
 
 <!-- BEGIN HEADER -->
-<div>
-    <a href="index.html">
-        <img class=logo src="img/logo.png" alt="logo">
-    </a>
-    <div class="caption">
-        <p>THE #1 FISH SHOP FOR YOUR ALL YOUR FISH NEEDS</p>
-    </div>
-</div>
-
-<div class="nav">
-    <a href="index.html#left-nav">SHOP</a>
-    <a href="about.html">ABOUT US</a>
-</div>
+<?php echo file_get_contents("header.html"); ?>
 <!-- END HEADER -->
 
 <!-- BEGIN MIDDLE SECTION -->
@@ -87,10 +75,8 @@
 </div>
 <!-- END MIDDLE SECTION -->
 
-<!-- BEGIN FOOTER -->
-<div class=" nav">
-    <a1>Name: Vivian Nguyen / UCINetID: nguyev12 / ID #: 84955920 / Machine Number: 27</a1>
-</div>
-<!-- END FOOTER -->
+<!-- BEGIN HEADER -->
+<?php echo file_get_contents("footer.html"); ?>
+<!-- END HEADER -->
 
 </html>
