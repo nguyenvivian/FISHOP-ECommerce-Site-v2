@@ -77,14 +77,14 @@ function checkForm() {
         document.getElementById("error").innerHTML = errors;
         return false;
     }
-    window = window.open("mailto:nguyev12@uci.edu?subject=Purchase Form for: " + products
-        + "&body=" + "Quantity = " + quantity
-        + "%0AFirst Name = " + fname
-        + "%0ALast Name = " + lname
-        + "%0APhone Number = " + phoneNumber
-        + "%0AShipping Address = " + street + " " + city + " " + state + ", " + postalCode
-        + "%0AShipping Method = " + shippingMethod
-        + "%0ACredit Card Number = " + ccnumber
-        + "%0ACCV = " + ccv,
-        'emailWindow');
+    // window = window.open("mailto:nguyev12@uci.edu?subject=Purchase Form for: " + products
+    //     + "&body=" + "Quantity = " + quantity
+    //     + "%0AFirst Name = " + fname
+    //     + "%0ALast Name = " + lname
+    //     + "%0APhone Number = " + phoneNumber
+    //     + "%0AShipping Address = " + street + " " + city + " " + state + ", " + postalCode
+    //     + "%0AShipping Method = " + shippingMethod
+    //     + "%0ACredit Card Number = " + ccnumber
+    //     + "%0ACCV = " + ccv,
+    //     'emailWindow');
 }

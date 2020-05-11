@@ -17,10 +17,7 @@
 
         $product_details = mysqli_fetch_all($result2, MYSQLI_ASSOC);
 
-        // foreach($products as $product){
-        //     echo htmlspecialchars($product["NAME"]);
-        // }
-        $conn=null;
+        mysqli_close($conn);
     }
     catch (PDOException $e){
         echo $e->getMessage();
@@ -50,44 +47,45 @@
             < </a>
                 <a class="next" onclick="showPicture(1)">></a>
     </div>
+
     <div>
-        <form id="myForm" onsubmit="checkForm();return false;">
+        <form id="myForm" onsubmit="checkForm();" action="insert-purchase.php" method="post">
             <p class="error" id="error"></p>
             <label for="products">Select Item:</label>
-            <select id="products">
+            <select id="products" name="products">
                 <option><?php print_r($products['NAME'])?></option>
             </select>
             <label for="quantity">Quantity:</label>
-            <select id="quantity">
+            <select id="quantity" name="quantity">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
             </select>
             <label for="fname">First name:</label>
-            <input type="text" id="fname">
+            <input type="text" id="fname" name="fname">
             <label for="lname">Last name:</label>
-            <input type="text" id="lname">
+            <input type="text" id="lname" name="lname">
             <label for="phoneNumber">Phone Number (XXXXXXXXXX): </label>
-            <input type="text" id="phoneNumber">
+            <input type="text" id="phoneNumber" name="phoneNumber">
             <label for="street">Street:</label>
-            <input type="text" id="street">
+            <input type="text" id="street" name="street">
             <label for="city">City:</label>
-            <input type="text" id="city">
+            <input type="text" id="city" name="city">
             <label for="state">State:</label>
-            <input type="text" id="state">
+            <input type="text" id="state" name="state">
             <label for="postalCode">Postal Code (XXXXX):</label>
-            <input type="text" id="postalCode">
+            <input type="text" id="postalCode" name="postalCode">
             <label for="shippingMethod">Shipping Method:</label>
-            <select id="shippingMethod">
+            <select id="shippingMethod" name="shippingMethod">
                 <option>Overnight</option>
                 <option>2 Days Expedited</option>
                 <option>6 Days Ground</option>
             </select>
             <label for="ccnumber">Credit Card Number (XXXXXXXXXXXXXXXX):</label>
-            <input type="text" id="ccnumber">
+            <input type="text" id="ccnumber" name="ccnumber">
             <label for="ccv">CCV (XXX) or (XXXX):</label>
-            <input type="text" id="ccv">
+            <input type="text" id="ccv" name="ccv">
             <input type="submit" id="submit">
         </form>
     </div>
