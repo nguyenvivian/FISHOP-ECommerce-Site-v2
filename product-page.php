@@ -1,5 +1,5 @@
 <?php
-    $servername = "localhost";
+    $servername = "127.0.0.1";
     $username = "root";
     $password = "";
     try{
@@ -77,18 +77,19 @@
             <input type="text" id="city" name="city">
             <label for="state">State:</label>
             <input type="text" id="state" name="state">
-            <label for="shippingMethod">Shipping Method:</label>
-            <select id="shippingMethod" name="shippingMethod">
-                <option>Overnight</option>
-                <option>2 Days Expedited</option>
-                <option>6 Days Ground</option>
+            <label for="shippingMethod">Shipping Method (Select once after entering a valid postal code):</label>
+            <select id="shippingMethod" name="shippingMethod" onChange="addShipping(this.value)">
+                <option value="default" selected="selected">Select From List</option>
+                <option>Overnight $20 </option>
+                <option>2 Days Expedited $15</option>
+                <option>6 Days Ground $10</option>
             </select>
             <label for="ccnumber">Credit Card Number (XXXXXXXXXXXXXXXX):</label>
             <input type="text" id="ccnumber" name="ccnumber">
             <label for="ccv">CCV (XXX) or (XXXX):</label>
             <input type="text" id="ccv" name="ccv">
-            <label for="total">Total Price + Tax Rate (<a id='taxrate' name='taxrate'></a>): </label>
-            <a id="total" name="total"></a>
+            <label for="total">Total Price + Shipping + Tax Rate (<a id='taxrate' name='taxrate'></a>): </label>
+            <a id="total" name="total" #total></a>
             <input type="submit" id="submit">
         </form>
     </div>

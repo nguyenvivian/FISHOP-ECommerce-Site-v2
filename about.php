@@ -19,6 +19,7 @@
         <a class="left-nav" href="#what-we-sell">WHAT WE SELL</a>
         <a class="left-nav" href="#management-team">MANAGEMENT TEAM</a>
         <a class="left-nav" href="#location">LOCATION</a>
+        <a class="left-nav" href="#citations">CITATIONS</a>
     </div>
     <!-- END LEFT NAVIFATION PANEL -->
     <div class="middle ">
@@ -69,6 +70,21 @@
             </div>
             <div class="middle">
                 <img src="img/about/irvine.png" style="width: 70%;">
+            </div>
+        </div>
+
+        <div class="about grid-container" id="citations">
+            <div class="left mgmt">
+            </div>
+            <div class="middle">
+                <description-title>CITATIONS</description-title>
+                <description-body>All fish food images, descriptions, and prices sourced from Amazon.com.
+                </description-body>
+                <description-body>All live fish images as well as their information are sourced from
+                    https://aquariumfish.ecwid.com/.</description-body>
+                <description-body>Storefront images are from Vivid Aquarium on Youtube.</description-body>
+                <description-body>What we sell images are sourced from the Monterey Bay Aquarium.</description-body>
+                </description-body>
             </div>
         </div>
     </div>
