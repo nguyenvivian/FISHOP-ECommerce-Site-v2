@@ -96,3 +96,7 @@
 .option{
     text-transform: uppercase;
 }
+
+a{
+    display: block;
+}

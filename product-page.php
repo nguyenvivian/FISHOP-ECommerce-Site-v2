@@ -11,11 +11,11 @@
         $result1 = mysqli_query($conn, $sql1);
 
         $products = mysqli_fetch_array($result1, MYSQLI_ASSOC);
-
         $sql2 = "SELECT * FROM PRODUCT_DETAIL WHERE PRODUCT_ID = $val";
         $result2 = mysqli_query($conn, $sql2);
 
         $product_details = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+
 
         mysqli_close($conn);
     }
@@ -49,7 +49,7 @@
     </div>
 
     <div>
-        <form id="myForm" onsubmit="checkForm();" action="insert-purchase.php" method="post">
+        <form id="myForm" action="insert-purchase.php" method="post" onsubmit="return checkForm();">
             <p class="error" id="error"></p>
             <label for="products">Select Item:</label>
             <select id="products" name="products">
@@ -68,14 +68,15 @@
             <input type="text" id="lname" name="lname">
             <label for="phoneNumber">Phone Number (XXXXXXXXXX): </label>
             <input type="text" id="phoneNumber" name="phoneNumber">
+            <label for="postalCode">Postal Code (XXXXX):</label>
+            <input type="text" id="postalCode" name="postalCode"
+                onblur="calcTax(this.value, <?php print_r($products['PRICE']) ?>)">
             <label for="street">Street:</label>
             <input type="text" id="street" name="street">
             <label for="city">City:</label>
             <input type="text" id="city" name="city">
             <label for="state">State:</label>
             <input type="text" id="state" name="state">
-            <label for="postalCode">Postal Code (XXXXX):</label>
-            <input type="text" id="postalCode" name="postalCode">
             <label for="shippingMethod">Shipping Method:</label>
             <select id="shippingMethod" name="shippingMethod">
                 <option>Overnight</option>
@@ -86,6 +87,8 @@
             <input type="text" id="ccnumber" name="ccnumber">
             <label for="ccv">CCV (XXX) or (XXXX):</label>
             <input type="text" id="ccv" name="ccv">
+            <label for="total">Total Price + Tax Rate (<a id='taxrate' name='taxrate'></a>): </label>
+            <a id="total" name="total"></a>
             <input type="submit" id="submit">
         </form>
     </div>
@@ -105,5 +108,6 @@
 <?php echo file_get_contents("footer.html"); ?>
 <!-- END FOOTER -->
 <script src="main.js"></script>
+<script src="tax.js"></script>
 
 </html>

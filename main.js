@@ -75,7 +75,7 @@ function checkForm() {
     }
     if (errors.length > 0) {
         document.getElementById("error").innerHTML = errors;
-        return false;
+        return true;
     }
     // window = window.open("mailto:nguyev12@uci.edu?subject=Purchase Form for: " + products
     //     + "&body=" + "Quantity = " + quantity

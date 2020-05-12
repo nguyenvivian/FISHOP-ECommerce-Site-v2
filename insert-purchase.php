@@ -23,7 +23,7 @@
         $phoneNumber,'$street','$shippingMethod','$ccnumber',$ccv,'$products',$quantity)";
         $conn->query($sql);            
 
-        echo mysqli_error($conn);
+        // echo mysqli_error($conn);
             
         mysqli_close($conn);
     }
